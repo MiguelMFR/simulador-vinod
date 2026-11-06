@@ -11,11 +11,7 @@ public final class Main {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            SimulatorModel model = new SimulatorModel();
-            SimulatorView view = new SimulatorView();
-            new SimulatorController(model, view);
-            view.setVisible(true);
-        });
+        
     }
+
 }
