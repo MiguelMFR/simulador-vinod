@@ -1,0 +1,10 @@
+Este pacote é responsável pela interface gráfica do simulador,
+apresentando ao usuário os componentes e o funcionamento
+da microarquitetura.
+
+Deverá permitir a visualização dos registradores, memórias,
+caches, Unidade de Controle e demais componentes da arquitetura.
+
+Também apresentará o estado atual da execução das instruções,
+permitindo acompanhar o funcionamento interno do processador
+durante a simulação.

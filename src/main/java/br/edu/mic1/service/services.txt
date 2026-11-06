@@ -1,0 +1,9 @@
+Este pacote concentra os serviços e as regras de processamento
+da aplicação, disponibilizando funcionalidades para o Controller.
+
+No simulador, poderá conter o Assembler, responsável por
+interpretar e converter as instruções Assembly para o formato
+de máquina utilizado pela arquitetura.
+
+Também poderá conter serviços auxiliares para processamento,
+validação e preparação das instruções antes de sua execução.

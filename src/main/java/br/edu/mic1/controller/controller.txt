@@ -1,0 +1,9 @@
+Este pacote é responsável por coordenar a aplicação,
+intermediando a comunicação entre a View, o Model e o Service.
+
+No simulador, será responsável por controlar a execução
+das instruções, coordenar o ciclo de processamento e
+solicitar as operações necessárias à Unidade de Controle.
+
+Também receberá as ações do usuário e notificará a View
+quando houver alterações relevantes no estado da simulação.
