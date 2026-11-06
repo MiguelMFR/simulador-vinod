@@ -1,3 +1,5 @@
+package br.edu.mic1.model.register;
+
 public class Registrador {
     private int[] registros;
 
