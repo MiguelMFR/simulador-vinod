@@ -1,9 +1,5 @@
 package br.edu.mic1;
 
-import br.edu.mic1.controller.SimulatorController;
-import br.edu.mic1.model.SimulatorModel;
-import br.edu.mic1.view.SimulatorView;
-
 import javax.swing.SwingUtilities;
 
 public final class Main {
