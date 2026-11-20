@@ -45,4 +45,37 @@ class RegistradorTest {
 
         assertEquals(1, zero.getValor()[0]);
     }
+
+    @Test
+    void shouldInitializeAmaskWithEightOnesInLeastSignificantBits() {
+        Amask amask = new Amask();
+        int[] expected = new int[]{
+                0, 0, 0, 0, 0, 0, 0, 0,
+                1, 1, 1, 1, 1, 1, 1, 1
+        };
+
+        assertArrayEquals(expected, amask.getValor());
+    }
+
+    @Test
+    void shouldInitializeSmaskWithFourOnesInLeastSignificantBits() {
+        Smask smask = new Smask();
+        int[] expected = new int[]{
+                0, 0, 0, 0, 0, 0, 0, 0,
+                0, 0, 0, 0, 1, 1, 1, 1
+        };
+
+        assertArrayEquals(expected, smask.getValor());
+    }
+
+    @Test
+    void shouldInitializeStackPointerWithExpectedBitPattern() {
+        StackPointer sp = new StackPointer();
+        int[] expected = new int[]{
+                0, 0, 0, 1, 0, 0, 0, 0,
+                0, 0, 0, 0, 0, 0, 0, 0
+        };
+
+        assertArrayEquals(expected, sp.getValor());
+    }
 }
