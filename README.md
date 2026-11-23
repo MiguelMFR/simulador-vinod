@@ -390,3 +390,30 @@ $sources = Get-ChildItem -Recurse -Filter *.java src/main/java |
     ForEach-Object -ExpandProperty FullName
 javac -encoding UTF-8 -d target/classes $sources
 ```
+
+## Docker
+
+Para executar a interface Swing em um navegador, use Docker Compose:
+
+```powershell
+docker compose up --build
+```
+
+Depois, abra [http://localhost:6080/vnc.html](http://localhost:6080/vnc.html).
+Clique em `Connect` na pagina noVNC para visualizar o simulador.
+
+Para ajustar a resolução da área virtual mostrada pelo navegador, altere
+`SCREEN_WIDTH` e `SCREEN_HEIGHT` no `docker-compose.yml`. A configuração
+padrão usa uma tela de 1600x900. Também é possível abrir noVNC com o ajuste
+visual ativo usando:
+
+```text
+http://localhost:6080/vnc.html?autoconnect=true&resize=scale
+```
+
+Para executar sem o Compose:
+
+```powershell
+docker build -t simulador-mic1 .
+docker run --rm -p 6080:6080 --name simulador-mic1 simulador-mic1
+```

@@ -81,6 +81,7 @@ public class SimulatorView extends JFrame {
         refresh();
 
         pack();
+        setSize(1600, 900);
         setLocationRelativeTo(null);
 
         SwingUtilities.invokeLater(() -> {
