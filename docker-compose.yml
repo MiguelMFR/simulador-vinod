@@ -1,0 +1,13 @@
+services:
+  simulador-mic1:
+    image: miguelmfr/simulador-mic1:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: simulador-mic1
+    ports:
+      - "6080:6080"
+    environment:
+      SCREEN_WIDTH: "1600"
+      SCREEN_HEIGHT: "900"
+    restart: unless-stopped

@@ -1,5 +1,6 @@
 package br.edu.mic1.model.cache;
 
+import java.util.Arrays;
 import java.util.Optional;
 
 public class Cache {
@@ -60,6 +61,12 @@ public class Cache {
 
     public long getMissCount() {
         return misses;
+    }
+
+    public void clear() {
+        Arrays.fill(lines, null);
+        hits = 0;
+        misses = 0;
     }
 
     protected final void validateAddress(int address) {

@@ -17,6 +17,7 @@ public class ULA {
     }
     
     public void perform(){
+        validarEntradas();
         // implementação da ULA
 
         // a operação depende de F, que é o código da operação a ser realizada
@@ -73,34 +74,57 @@ public class ULA {
     }
 
     public void setA(int[] A) {
-        this.A = A;
+        this.A = validarPalavra(A);
     }
 
     public void setB(int[] B) {
-        this.B = B;
+        this.B = validarPalavra(B);
     }
 
     public void setF(int[] F) {
-        this.F = F;
+        if (F == null || F.length != 2 || (F[0] != 0 && F[0] != 1)
+                || (F[1] != 0 && F[1] != 1)) {
+            throw new IllegalArgumentException("A operação da ULA deve conter dois bits.");
+        }
+        this.F = F.clone();
     }
 
     public int[] getA() {
-        return A;
+        return A == null ? null : A.clone();
     }
 
     public int[] getB() {
-        return B;
+        return B == null ? null : B.clone();
     }
 
     public int[] getF() {
-        return F;
+        return F == null ? null : F.clone();
     }
 
     public int[] getD() {
-        return D;
+        return D.clone();
     }
 
     public int[] getR() {
-        return R;
+        return R.clone();
+    }
+
+    private void validarEntradas() {
+        if (A == null || B == null || F == null) {
+            throw new IllegalStateException("A, B e F devem ser definidos antes da operação.");
+        }
+    }
+
+    private static int[] validarPalavra(int[] palavra) {
+        if (palavra == null || palavra.length != 16) {
+            throw new IllegalArgumentException("A palavra da ULA deve conter 16 bits.");
+        }
+        int[] copia = palavra.clone();
+        for (int bit : copia) {
+            if (bit != 0 && bit != 1) {
+                throw new IllegalArgumentException("A palavra da ULA aceita somente bits 0 ou 1.");
+            }
+        }
+        return copia;
     }
 }
